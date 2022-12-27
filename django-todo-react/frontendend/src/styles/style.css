@@ -1,0 +1,127 @@
+
+#root{
+    background-color:rebeccapurple;
+    color:white;
+}
+
+
+.nav-linkk{
+    color:white;
+    decoration:none;
+    border: 1px solid white;
+    padding: 5px;
+    width:70px;
+
+}
+
+.bottonss{
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+}
+
+.golinks{
+  text-align:center;
+}
+
+.golinks .message{
+   font-size:20px;
+   margin-op:20px;
+   text-align:center;
+}
+
+.label, .label input[type=text]{
+width:200px;
+margin:0 auto;
+display:block;
+}
+
+
+
+.form button[type=submit]{
+width:70px;
+margin:0 auto;
+}
+
+
+
+.formtext textarea{
+width:230px;
+height:7em;
+}
+
+
+
+
+
+.navi{
+text-align:center;
+margin:0;
+}
+
+.button3{
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+}
+
+.text-uppercase{
+margin:0 auto;
+text-align:center;
+}
+
+#overlay{
+margin:0 auto;
+text-align:center;
+}
+
+
+.list-group{
+margin:0 auto;
+text-align:center;
+list-style:none;
+padding:10px;
+color:black;
+font-weight:600;
+}
+
+.nav{
+margin:0 auto;
+text-align:center;
+}
+
+
+
+.app {
+  padding: 30px;
+  background-color: floralwhite;
+}
+
+.todo {
+  align-items: center;
+  display: flex;
+  font-size: 18px;
+  justify-content: space-between;
+}
+
+
+
+
+@media(max-width:420px){
+.form{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+
+}
+
+.form .button[type=submit]{
+width:100%;
+
+}
+
+
+
+
+
+}
