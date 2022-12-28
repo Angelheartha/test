@@ -32,10 +32,12 @@ class CustomUserSerializerr(TokenObtainPairSerializer):
     startDate = serializers.CharField()
     vals = serializers.CharField()
     val = serializers.CharField()
+    setSelectedFile = serializers.ImageField(upload_to="images/")
+
 
     class Meta:
         model = Account
-        fields = ('email', 'username', 'password', "startDate", "vals", "val")
+        fields = ('email', 'username', 'password', "startDate", "vals", "val","setSelectedFile")
         extra_kwargs = {'password': {'write_only': True, 'required': True}}
 
     def create(self, validated_data):

@@ -188,3 +188,5 @@ SECURE_CROSS_ORIGIN_OPENER_POLICY = None
 SESSION_COOKIE_SECURE = False
 
 # Access_Control_Allow_Origin = 'http://52.194.229.247:8000'
+MEDEA_ROOT = os.path.join(BASE_DIR,'media')
+MEDEA_URL = "/media/"

@@ -90,6 +90,7 @@ localStorage.setItem('キー', setjson);
                             startDate:startDate,
                             vals:vals,
                             val:val,
+                            setSelectedFile:setSelectedFile,
             },
             {withCredentials:true}
             ).then(response=>{
