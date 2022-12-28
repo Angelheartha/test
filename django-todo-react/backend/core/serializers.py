@@ -29,9 +29,13 @@ class CustomUserSerializerr(TokenObtainPairSerializer):
     username = serializers.CharField()
     password = serializers.CharField(min_length=8, write_only=True)
 
+    startDate = serializers.CharField()
+    vals = serializers.CharField()
+    val = serializers.CharField()
+
     class Meta:
         model = Account
-        fields = ('email', 'username', 'password')
+        fields = ('email', 'username', 'password', "startDate", "vals", "val")
         extra_kwargs = {'password': {'write_only': True, 'required': True}}
 
     def create(self, validated_data):
@@ -52,12 +56,11 @@ class CustomUserSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(
         required=True
     )
-    username = serializers.CharField()
     password = serializers.CharField(min_length=8, write_only=True)
 
     class Meta:
         model = Account
-        fields = ('email', 'username', 'password')
+        fields = ('email', 'password')
         extra_kwargs = {'password': {'write_only': True, 'required': True}}
 
     def create(self, validated_data):

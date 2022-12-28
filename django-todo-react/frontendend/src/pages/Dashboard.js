@@ -34,7 +34,7 @@ const Dashboard = (props) => {
   const [input, setInput]=useState("");
   const [textarea, setTextarea]=useState("");
  // const [loggedInStatus, setLoggedInStatus]=useState("未ログイン");
-  const {loggedInStatus, setLoggedInStatus } = useContext(LoginStatusContext);
+  const {loggedInStatus, setLoggedInStatus} = useContext(LoginStatusContext);
  // const{checkLoginStatus} = useContext(LoginStatusContext);
 
 useEffect(()=>{
@@ -60,25 +60,27 @@ const checkLoginStatus = () => {
         if(objj === null){
         }else{
          axios.post("http://127.0.0.1:8000/cores/token/refresh/" ,{
-                           username:objj.username,
                               email:objj.email,
                            password:objj.password,
             },
             { withCredentials: true }
    ).then(response =>{
-          handleLogin()
+
         if (response.data.refresh　&& loggedInStatus === "未ログイン") {
-          console.log("looo");
           //setLoggedInStatus("未ログイン");
-         // setLoggedInStatus("ログインなう");
+           setLoggedInStatus("ログインなう");
           //setUser(response.data.user)
         console.log("c");
         }else if (!response.data.refresh　&& loggedInStatus === "ログインなう") {
-          setLoggedInStatus("未ログイン");
-         // console.log("yeath");
-          console.log("loloo");
+          //setLoggedInStatus("ログインなう");
+          //console.log("loloouuu");
+          //setUser({})
+        }else if (!response.data.refresh　&& loggedInStatus === "未ログイン") {
+          setLoggedInStatus("ログインなう");
+          console.log("loloouuu");
           //setUser({})
         }
+
       })
       .catch(error => {
         console.log("ログインエラー", error)
@@ -97,7 +99,6 @@ var array = []
 var crazy =  []
 
 var obj = {
-  'username': username,
   'email': email,
   'password':password
 };

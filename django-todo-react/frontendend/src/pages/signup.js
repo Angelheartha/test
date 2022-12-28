@@ -66,7 +66,6 @@ var array = []
 var crazy =  []
 
 var obj = {
-  'username': username,
   'email': email,
   'password':password
 };
@@ -80,10 +79,6 @@ localStorage.setItem('キー', setjson);
 }
 
 
-const handleLogin = () =>{
-     setLoggedInStatus("ログインなう");
-  }
-
 
  const handleSubmit = (event) => {
          console.log("a")
@@ -91,7 +86,10 @@ const handleLogin = () =>{
              {
                             username: username,
                             email: email,
-                            password:password
+                            password:password,
+                            startDate:startDate,
+                            vals:vals,
+                            val:val,
             },
             {withCredentials:true}
             ).then(response=>{

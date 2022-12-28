@@ -53,6 +53,10 @@ export function MyApp ({ Component, pageProps }) {
 
 
 
+  const handleLogin = () =>{
+  setLoggedInStatus("ログインなう");
+  console.log('ww2')
+  }
 
 
 
@@ -64,7 +68,7 @@ export function MyApp ({ Component, pageProps }) {
           <h1 className="message">You are always welcome!</h1>
 
       <LoginStatusContext.Provider
-       value={{loggedInStatus,setLoggedInStatus,email,setEmail,username,setUsername,password,setPassword,handleLogout,selectedFile,setSelectedFile,isFilePicked,setIsFilePicked}}>
+       value={{loggedInStatus,setLoggedInStatus,handleLogin,email,setEmail,username,setUsername,password,setPassword,handleLogout,selectedFile,setSelectedFile,isFilePicked,setIsFilePicked}}>
           <Component {...pageProps} />
       </LoginStatusContext.Provider>
      </div>

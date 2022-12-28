@@ -19,16 +19,12 @@ export default function Login() {
      const {email, setEmail } = useContext(LoginStatusContext);
      const {loggedInStatus, setLoggedInStatus } = useContext(LoginStatusContext);
      const router = useRouter();
-   //  const {local } = useContext(LoginStatusContext);
+     const { handleLogin} = useContext(LoginStatusContext);
      //const local = local();
 
-  const handleLogin = () =>{
-  setLoggedInStatus("ログインなう");
-  }
 
 
   const handleSuccessfulAuthentication = () =>{
-
         router.replace("/Dashboard");
 
    }
@@ -41,7 +37,6 @@ var array = []
 var crazy =  []
 
 var obj = {
-  'username': username,
   'email': email,
   'password':password
 };
@@ -74,21 +69,16 @@ const psss = (data) =>{
 
 
     const handleSubmit = (event) => {
-     console.log("a")
                 axios.post("http://127.0.0.1:8000/cores/token/obtain/",
             {
-                    username: username,
                     email: email,
-                    password: password
-
+                    password: password,
             },
             { withCredentials: true }
         ).then(response => {
-
-            handleLogin()//
-            //console.log(response)//
             console.log(response)
             if (response.statusText === "OK") {
+                 handleLogin();
                  handleSuccessfulAuthentication(response.data);
                  local()
             }
@@ -121,15 +111,6 @@ const psss = (data) =>{
                     value={password}
                     onChange={event=>setPassword(event.target.value)}
                 />
-                <input
-                    type="username"
-                    name="username"
-                    placeholder="Username"
-                    value={username}
-                    onChange={event=>setUsername(event.target.value)}
-                />
-
-
 
                 <button className="button" type="submit">Login</button>
             </form>

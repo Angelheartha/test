@@ -23,11 +23,8 @@ const handleLogin = () =>{
 
 
 const handleLogoutClick = () => {
-        axios.get("http://127.0.0.1:8000/", { withCredentials: true })
-            .then(response => {
                 handleLogout()
-                console.log("ll")
-            }).catch(error => console.log("ログアウトエラー", error))
+
     };
 
 

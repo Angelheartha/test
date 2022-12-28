@@ -14,18 +14,18 @@ from django.views.decorators.csrf import csrf_exempt
 
 class ObtainTokenPairWithColorView(TokenObtainPairView):
     permission_classes = (permissions.AllowAny,)
-    serializer_class = CustomUserSerializerr
+    serializer_class = CustomUserSerializer
 
 
 class RefreshTokenPairWithColorView(TokenRefreshView):
     permission_classes = (permissions.AllowAny,)
-    serializer_class = CustomUserSerializerr
+    serializer_class = CustomUserSerializer
 
 
 class CustomUserCreate(APIView):
     permission_classes = (permissions.AllowAny,)
     authentication_classes = ()
-    serializer_class = CustomUserSerializer
+    serializer_class = CustomUserSerializerr
 
     @transaction.atomic
     def post(self, request, format='json'):
