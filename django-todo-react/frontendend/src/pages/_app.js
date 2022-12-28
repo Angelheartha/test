@@ -38,6 +38,9 @@ export function MyApp ({ Component, pageProps }) {
  const[email, setEmail] = useState("")
  const[password, setPassword] = useState("")
  const[username, setUsername] = useState("")
+ const [selectedFile, setSelectedFile] = useState(false);
+ const [isFilePicked, setIsFilePicked] = useState();
+
  //const [loggedInStatus, setLoggedInStatus]=useState("未ログイン");
 
 
@@ -61,7 +64,7 @@ export function MyApp ({ Component, pageProps }) {
           <h1 className="message">You are always welcome!</h1>
 
       <LoginStatusContext.Provider
-       value={{loggedInStatus,setLoggedInStatus,email,setEmail,username,setUsername,password,setPassword,handleLogout}}>
+       value={{loggedInStatus,setLoggedInStatus,email,setEmail,username,setUsername,password,setPassword,handleLogout,selectedFile,setSelectedFile,isFilePicked,setIsFilePicked}}>
           <Component {...pageProps} />
       </LoginStatusContext.Provider>
      </div>

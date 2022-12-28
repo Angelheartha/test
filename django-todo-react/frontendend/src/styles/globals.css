@@ -138,8 +138,23 @@ text-align:center;
   justify-content: space-between;
 }
 
+.gender{
+text-align:center;
+}
 
+.yesno{
+width:90px;
+text-align:center;
+}
 
+.form{
+margin:0 auto;
+}
+
+.divclass{
+text-align:center;
+margin-top:40px;
+}
 
 @media(max-width:420px){
 .form{
