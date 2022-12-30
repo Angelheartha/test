@@ -65,7 +65,7 @@ export function MyApp ({ Component, pageProps }) {
     <div id="root">
      <Navbar />
      <div className="golinks">
-          <h1 className="message">You are always welcome!</h1>
+          <h1 className="message">ようこそ！！</h1>
 
       <LoginStatusContext.Provider
        value={{loggedInStatus,setLoggedInStatus,handleLogin,email,setEmail,username,setUsername,password,setPassword,handleLogout,selectedFile,setSelectedFile,isFilePicked,setIsFilePicked}}>

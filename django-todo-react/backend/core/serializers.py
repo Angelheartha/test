@@ -21,19 +21,19 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 
 class CustomUserSerializerr(TokenObtainPairSerializer):
     """
-    Currently unused in preference of the below.
-    """
+       Currently unused in preference of the below.
+       """
+
+    setSelectedFile = serializers.ImageField(max_length=30)
     email = serializers.EmailField(
         required=True
     )
-    username = serializers.CharField()
+    username = serializers.CharField(max_length=30)
     password = serializers.CharField(min_length=8, write_only=True)
 
-    startDate = serializers.CharField()
-    vals = serializers.CharField()
-    val = serializers.CharField()
-    setSelectedFile = serializers.ImageField(upload_to="images/")
-
+    startDate = serializers.CharField(max_length=30)
+    vals = serializers.CharField(max_length=30)
+    val = serializers.CharField(max_length=30)
 
     class Meta:
         model = Account

@@ -93,24 +93,60 @@ const psss = (data) =>{
     return (
         <div>
             {/* ログインに変更 */}
-            <p>Login</p>
 
             {/* フォーム内のpassword_confrmation入力フィールド削除 */}
             <form className="form" onSubmit={handleSubmit}>
-                <input
+            <div className="ke-tai">
+            <div className="divdivdiv3">
+            <p>メールアドレス:</p>
+              <input
                     type="email"
                     name="email"
                     placeholder="E-mail"
                     value={email}
                     onChange={event=>setEmail(event.target.value)}
                 />
-                <input
+            </div>
+            <div className="divdivdiv3">
+            <p>パスワード:</p>
+            <input
                     type="password"
                     name="password"
                     placeholder="Password"
                     value={password}
                     onChange={event=>setPassword(event.target.value)}
                 />
+            </div>
+            </div>
+
+                <table className="tableform" border="1">
+                <tbody>
+                <tr>
+                <td>メールアドレス:</td><td>
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="E-mail"
+                    value={email}
+                    onChange={event=>setEmail(event.target.value)}
+                /></td>
+                </tr>
+
+                <tr>
+                <td>パスワード:</td><td>
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={event=>setPassword(event.target.value)}
+                /></td>
+                </tr>
+                </tbody>
+                </table>
+
+
+
 
                 <button className="button" type="submit">Login</button>
             </form>

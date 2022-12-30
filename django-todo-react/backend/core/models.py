@@ -43,7 +43,7 @@ class AccountManager(BaseUserManager):
 
 
 class Account(AbstractBaseUser):
-    username = models.CharField(('username'), max_length=30, unique=True)
+    username = models.CharField(('username'), max_length=30)
     first_name = models.CharField(
         ('first name'), max_length=30, blank=True)
     last_name = models.CharField(('last name'), max_length=30, blank=True)
@@ -54,6 +54,10 @@ class Account(AbstractBaseUser):
     is_admin = models.BooleanField(default=False)
     date_joined = models.DateTimeField(
         ('date joined'), default=timezone.now)
+
+    setSelectedFile = models.ImageField(upload_to="image",verbose_name="file")
+
+
 
     objects = AccountManager()
 
@@ -84,4 +88,3 @@ class Account(AbstractBaseUser):
 
 class CustomUser(AbstractUser):
     fav_color = models.CharField(blank=True, max_length=120)
-

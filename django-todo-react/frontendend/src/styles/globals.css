@@ -32,8 +32,17 @@ a {
 
 
 #root{
-    background-color:rebeccapurple;
+    background-color:#00CCFF;
     color:white;
+}
+
+
+.message{
+font-weight:600;
+}
+
+.site .dashbord{
+display:none;
 }
 
 
@@ -147,13 +156,50 @@ width:90px;
 text-align:center;
 }
 
-.form{
-margin:0 auto;
+.doui{
+text-decoration: none
+}
+
+.doui:hover{
+text-decoration: none
+}
+
+.tableform input[type=username]{
+width:100%;
+}
+
+.tableform input[type=email]{
+width:100%;
+}
+
+.tableform input[type=password]{
+width:100%;
+}
+
+
+
+
+.tableform{
+margin: 10px auto;
+padding: 0.5em 1em;
+    color: #474747;
+    background: whitesmoke;/*背景色*/
+    border-left: double 7px #4ec4d3;/*左線*/
+    border-right: double 7px #4ec4d3;/*右線*/
+
 }
 
 .divclass{
-text-align:center;
+
 margin-top:40px;
+}
+
+.tableform td{
+text-align:left;
+}
+
+.ke-tai{
+display:none;
 }
 
 @media(max-width:420px){
@@ -164,13 +210,64 @@ margin-top:40px;
 
 }
 
+
 .form .button[type=submit]{
 width:100%;
 
 }
 
+.tableform{
+width:100%;
+}
+
+.tableform td{
+font-size:14px;
+text-align:left;
+}
+
+.formtext input{
+width:100%;
+}
+
+.formtext textarea{
+width:100%;
+}
+
+.tableform{
+display:none;
+}
+
+.ke-tai{
+display:block;
+text-align:left;
+margin-top:20px;
+color:black;
+padding: 0.5em 1em;
+font-weight: bold;
+color: #6091d3;/*文字色*/
+background: #FFF;
+border: solid 3px #6091d3;/*線*/
+border-radius: 10px;
+
+}
+
+.ke-tai input[type=username]{
+width:90%;
+}
+
+.ke-tai input[type=email]{
+width:90%;
+
+.ke-tai .divdivdiv{
+margin-bottom:50px;
+}
 
 
+}
 
+.ke-tai input[type=password]{
+width:90%;
+
+}
 
 }

@@ -29,7 +29,7 @@ export default function Signup() {
 
 
     const items = ['男性', '女性'];
-    const item = ['はい', 'いいえ'];
+    const item = ['同意する'];
     const [vals, setVals] = React.useState('性別');
     const [val, setVal] = React.useState('同意');
 
@@ -81,7 +81,6 @@ localStorage.setItem('キー', setjson);
 
 
  const handleSubmit = (event) => {
-         console.log("a")
          axios.post('http://127.0.0.1:8000/cores/user/create/',
              {
                             username: username,
@@ -94,7 +93,9 @@ localStorage.setItem('キー', setjson);
             },
             {withCredentials:true}
             ).then(response=>{
-              handleLogin();
+              console.log('ww1')
+              console.log(response)
+               console.log('ww2')
                if(response.statusText === 'Created'){
                handleSuccessfulAuthentication(response);
                local()
@@ -119,55 +120,52 @@ const handleSubmission = () => {
 	return(
         <div>
             <form className="form" onSubmit={handleSubmit}>
-                 <div className="divclass">
-                 <p>名前:</p>
-                    <input
+
+        <div className="ke-tai">
+            <div className="divdivdiv">
+            <p>名前：</p>
+            <input
                        type="username"
                        name="username"
                        placeholder="Username"
                        value={username}
                        onChange={event => setUsername(event.target.value)}
                     />
-                 </div>
-                 <div className="divclass">
-                 <p>メールアドレス:</p>
-                    <input
+            </div>
+            <div className="divdivdiv3">
+            <p>メールアドレス:</p>
+             <input
                        type="email"
                        name="email"
                        placeholder="E-mail"
                        value={email}
                        onChange={event => setEmail(event.target.value)}
                     />
-                 </div>
-                 <div className="divclass">
-                 <p>パスワード:</p>
-                    <input
+            </div>
+            <div className="divdivdiv3">
+            <p>パスワード:</p>
+            <input
                        type="password"
                        name="password"
                        placeholder="Password"
                        value={password}
                        onChange={event => setPassword(event.target.value)}
                     />
-                 </div>
-
-
-                 <div className="divclass">
-                 <p>アイコン写真:</p>
-                    <input  type="file" name="file" onChange={changeHandler} />
-                 </div>
-
-                 <div className="divclass">
-
-                 <p>誕生日:</p>
-                     <DatePicker
+            </div>
+            <div className="divdivdiv3">
+            <p>アイコン写真:</p>
+           <input  type="file" name="file" onChange={changeHandler} />
+            </div>
+            <div className="divdivdiv3">
+            <p>誕生日:</p>
+             <DatePicker
                         selected={startDate}
                         onChange={handleChange}
                        />
-                 </div>
-
-<div className="divclass">
-                   <p>性別:</p>
-        {items.map((items) => {
+            </div>
+            <div className="divdivdiv3">
+            <p>性別:</p>
+           {items.map((items) => {
           return (
             <div key={items}>
               <input
@@ -181,11 +179,10 @@ const handleSubmission = () => {
             </div>
           );
         })}
-
-      </div>
-
-<div className="divclass">
-                   <a href="https://menherasenpai.notion.site/457df49475494671807673a0a3346451">利用規約への同意</a>
+            </div>
+            <div className="divdivdiv3">
+            <p>同意:</p>
+            <a　className="doui" href="https://menherasenpai.notion.site/457df49475494671807673a0a3346451">利用規約への同意</a>
         {item.map((item) => {
           return (
             <div key={item}>
@@ -200,12 +197,93 @@ const handleSubmission = () => {
             </div>
           );
         })}
+            </div>
+        </div>
 
-      </div>
 
 
 
-                   <button className="button" type="submit">Signup</button>
+
+                <table className="tableform" border="1">
+                <tbody>
+                <tr><td>名前:</td>
+                <td><input
+                       type="username"
+                       name="username"
+                       placeholder="Username"
+                       value={username}
+                       onChange={event => setUsername(event.target.value)}
+                    /></td>
+                </tr>
+                <tr>
+                <td>メールアドレス:</td><td><input
+                       type="email"
+                       name="email"
+                       placeholder="E-mail"
+                       value={email}
+                       onChange={event => setEmail(event.target.value)}
+                    /></td>
+                </tr>
+                <tr>
+                <td>パスワード:</td><td><input
+                       type="password"
+                       name="password"
+                       placeholder="Password"
+                       value={password}
+                       onChange={event => setPassword(event.target.value)}
+                    /></td>
+                </tr>
+
+                <tr>
+                  <td>アイコン写真:</td><td><input  type="file" name="file" onChange={changeHandler} /></td>
+                </tr>
+                <tr>
+                  <td>誕生日:</td><td> <DatePicker
+                        selected={startDate}
+                        onChange={handleChange}
+                       /></td>
+                </tr>
+
+                <tr>
+                  <td>性別:</td><td>{items.map((items) => {
+          return (
+            <div key={items}>
+              <input
+                id={items}
+                type="radio"
+                value={items}
+                onChange={handleChangeee}
+                checked={items === vals}
+              />
+              <label htmlFor={items}>{items}</label>
+            </div>
+          );
+        })}</td>
+                </tr>
+                <tr>
+                  <td>同意:</td><td>
+                  <a　className="doui" href="https://menherasenpai.notion.site/457df49475494671807673a0a3346451">利用規約への同意</a>
+        {item.map((item) => {
+          return (
+            <div key={item}>
+              <input
+                id={item}
+                type="radio"
+                value={item}
+                onChange={handleChangee}
+                checked={item === val}
+              />
+              <label htmlFor={item}>{item}</label>
+            </div>
+          );
+        })}
+</td>
+                </tr>
+
+               </tbody>
+               </table>
+
+                   <button className="button" type="submit">登録</button>
                 </form>
 
 		</div>

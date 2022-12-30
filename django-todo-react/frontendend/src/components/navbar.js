@@ -381,7 +381,7 @@ window.setTimeout(function(){
             <div className="site">
 
                  <nav className="bottonss">
-                    <Link legacyBehavior href= "/" className="nav-linkk" >
+                    <Link legacyBehavior href= "/" className="nav-linkk homehome" >
                      <a className="nav-linkk">Home</a>
                     </Link>
 
@@ -396,44 +396,13 @@ window.setTimeout(function(){
                     </Link>
 
 
-                    <Link legacyBehavior href="/Dashboard/" className="nav-linkk" >
-                       <a className="nav-linkk">Dashboard</a>
+                    <Link legacyBehavior href="/Dashboard/" className="nav-linkk d-none" >
+                       <a className="nav-linkk d-none">Dashboard</a>
                     </Link>
 
                  </nav>
 
             </div>
-
-             // <button className={"nav-bot"} onClick={handleLogout}>Logout</button>
-//<Login handleSuccessfulAuthentication={handleSuccessfulAuthentication} handleLogin={handleLogin} //err={err} emm={emm} pss={pss}
-                      //  username={username} setUsername={setUsername} password={password} setPassword={setPassword} email={email} setEmail={setEmail} local={local}/>
-              //   <Home handleLogin={handleLogin} handleLogout={handleLogout} loggedInStatus={loggedInStatus} />
-
-
-
-                      //  <Link href="/signup/"
-                      //  element={
-                      //  <Signup handleSuccessfulAuthentication={handleSuccessfulAuthentication} handleLogin={handleLogin}
-                      //  username={username} setUsername={setUsername} password={password} setPassword={setPassword} email={email} setEmail={setEmail} local={local}/>
-                      //  }
-                      //  />
-
-
-
-
-
-
-
-                        //<link href="/Dashboard/"
-                        //  element={
-                        //  <Dashboard  loggedInStatus={loggedInStatus} />
-                        //  }
-                        //  />
-
-
-
-
-
 
 
         );
